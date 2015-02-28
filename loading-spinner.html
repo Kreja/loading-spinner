@@ -1,10 +1,41 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="loading-spinner">
-  <script src="loading-spinner.js" type="text/javascript" charset="utf-8"></script>
+<polymer-element name="loading-spinner" attributes="startColor middleColor endColor">
 
   <template>
     <link rel="stylesheet" href="loading-spinner.css">
+    <style>
+      .hex-brick{
+        background: {{middleColor}};
+      }
+
+      @keyframes fade{
+        0%{
+          background: {{startColor}};
+        }
+
+        50%{
+          background: {{middleColor}};
+        }
+
+        100%{
+          background: {{endColor}};
+        }
+      }
+      @-webkit-keyframes fade{
+        0%{
+          background: {{startColor}};
+        }
+
+        50%{
+          background: {{middleColor}};
+        }
+
+        100%{
+          background: {{endColor}};
+        }
+      }
+    </style>
 
     <div class="socket">
 
@@ -198,4 +229,23 @@
 
     </div>
   </template>
+
+    <script>
+        Polymer('loading-spinner',{
+            /**
+             * show loading spinner
+             * @return {[type]} [description]
+             */
+            show: function(){
+                this.$.socket.style.display = "block";
+            },
+            /**
+             * hide loading spinner
+             * @return {[type]} [description]
+             */
+            hide: function(){
+                this.$.socket.style.display = "none";
+            }
+        });
+    </script>
 </polymer-element>

@@ -1,4 +1,5 @@
 # Loading Spinner
+* Add color custom api.
 
 Colour tweaked and Polymer packaged version of
 [Kevin Martin's](http://kevinpaulmartin.com/)
