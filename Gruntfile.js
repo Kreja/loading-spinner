@@ -8,9 +8,6 @@ module.exports = function(grunt) {
               livereload: '<%= connect.options.livereload %>'
           },
           files: [
-              'demo.html',
-              'loading-spinner.html',
-              'loading-spinner.css'
           ]
       }
     },

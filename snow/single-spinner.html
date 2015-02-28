@@ -1,0 +1,232 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="single-spinner" attributes="startColor middleColor endColor brickW brickH gelW gelH">
+
+  <template>
+    <style>
+      :host{
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: relative;
+      }
+      .socket{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        animation-name: rotate;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-iteration-count: infinite;
+      }
+      /*每朵花的一片花瓣*/
+      .hex-brick{
+        background: #ff917b;
+        width: 30px;
+        height: 17px;
+        position: absolute;
+        top: 5px;
+        animation-name: fade;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      /*花瓣*/
+      .h2{
+        transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+      }
+
+      .h3{
+        transform: rotate(-60deg);
+        -webkit-transform: rotate(-60deg);
+      }
+
+      /*一朵花*/
+      .gel{
+        height: 30px;
+        width: 30px;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
+      .center-gel{
+        margin-left: -15px;
+        margin-top: -15px;
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+      }
+      /*缩放*/
+      @keyframes pulse{
+        0%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+
+        50%{
+          -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+        }
+
+        100%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fade{
+        0%{
+          background: #ffa18b;
+        }
+
+        50%{
+          background: #ff917b;
+        }
+
+        100%{
+          background: #ffa18b;
+        }
+      }
+
+      @-webkit-keyframes pulse{
+        0%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+
+        50%{
+          -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+        }
+
+        100%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+
+      @-webkit-keyframes fade{
+        0%{
+          background: #ffa18b;
+        }
+
+        50%{
+          background: #ff917b;
+        }
+
+        100%{
+          background: #ffa18b;
+        }
+      }
+      @keyframes rotate{
+        0%{
+          -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+        }
+
+        50%{
+          -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+        }
+
+        100%{
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      @-webkit-keyframes rotate{
+        0%{
+          -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+        }
+
+        50%{
+          -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+        }
+
+        100%{
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      .hex-brick{
+        background: {{middleColor}};
+        width: {{brickW}};
+        height: {{brickH}};
+      }
+
+      .gel{
+        width: {{gelW}};
+        height: {{gelH}};
+      }
+
+      @keyframes fade{
+        0%{
+          background: {{startColor}};
+        }
+
+        50%{
+          background: {{middleColor}};
+        }
+
+        100%{
+          background: {{endColor}};
+        }
+      }
+      @-webkit-keyframes fade{
+        0%{
+          background: {{startColor}};
+        }
+
+        50%{
+          background: {{middleColor}};
+        }
+
+        100%{
+          background: {{endColor}};
+        }
+      }
+    </style>
+
+    <div class="socket" id="socket">
+      <div class="gel center-gel">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+      Polymer('single-spinner',{
+          /**
+           * show loading spinner
+           * @return {[type]} [description]
+           */
+          show: function(){
+            this.$.socket.style.display = "block";
+          },
+          /**
+           * hide loading spinner
+           * @return {[type]} [description]
+           */
+          hide: function(){
+            this.$.socket.style.display = "none";
+          }
+      });
+  </script>
+</polymer-element>
