@@ -1,15 +1,29 @@
 <!doctype html>
 <html>
 <head>
-  <title>loading-spinner</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <link href="loading-spinner.html" rel="import">
+    <title>loading-spinner</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="loading-spinner.html" rel="import">
 </head>
 <body unresolved>
-  <loading-spinner startColor="#3FCADA" middleColor="#1074C5" endColor="#3FCADA"></loading-spinner>
-  <loading-spinner style="transform:scale(1.0); " startColor="#3FCADA" middleColor="#1074C5" endColor="#3FCADA" brickW='3px' brickH='15px' gelW="15px" gelH="15px"></loading-spinner>
-  <loading-spinner style="transform:scale(1.0); " startColor="#3FCADA" middleColor="#1074C5" endColor="#3FCADA" brickW='3px' brickH='88px' gelW="15px" gelH="15px"></loading-spinner>
+    <div id="tips"></div>
+    <loading-spinner startColor="#3FCADA" middleColor="#1074C5" endColor="#3FCADA"></loading-spinner>
+
+    <script>
+        var oSpinner = document.querySelector('loading-spinner'),
+            oTips = document.querySelector('#tips');
+
+        setTimeout(function(){
+            oSpinner.hide();
+            oTips.innerHTML = 'oSpinner.hide();';
+        },3000);
+
+        setTimeout(function(){
+            oSpinner.show();
+            oTips.innerHTML = 'oSpinner.show();';
+        },6000);
+    </script>
 </body>
 </html>
