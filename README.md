@@ -1,5 +1,6 @@
 # Loading Spinner
 * Add color custom api.
+* Add wrapper to cover the parent element to avoid event, such as click, while the spinner is spinning.
 
 
 ## how to run
