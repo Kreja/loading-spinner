@@ -2,11 +2,8 @@
 * Add color custom api.
 * Add wrapper to cover the parent element to avoid event, such as click, while the spinner is spinning.
 
-
-## how to run
-* bower install
-* npm install
-* grunt serve
+# install
+`bower install polymer-loading-spinner`
 
 Colour tweaked and Polymer packaged version of
 [Kevin Martin's](http://kevinpaulmartin.com/)
