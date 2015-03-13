@@ -1,3 +1,22 @@
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!--
+    <loading-spinner 
+      startColor="#3FCADA"
+      middleColor="#1074C5"
+      endColor="#3FCADA" 
+      wrapperColor="rgba(0,0,255,0.1)"></loading-spinner>
+@element loading-spinner
+@status beta
+@homepage github.io
+-->
 <link rel="import" href="../polymer/polymer.html">
 
 <polymer-element name="loading-spinner" attributes="startColor middleColor endColor wrapperColor">
@@ -237,18 +256,46 @@
   </template>
   <script>
     Polymer('loading-spinner', {
-        ready: function(){
-        },
         /**
-         * 显示
-         * @return {[type]} [description]
+         * The starting color of the loading spinner.
+         *
+         * @attribute startColor
+         * @type string
+         * @default '#3FCADA'
+         */
+        /**
+         * The transition color of the loading spinner.
+         *
+         * @attribute middleColor
+         * @type string
+         * @default '#1074C5'
+         */
+        /**
+         * The ending color of the loading spinner.
+         *
+         * @attribute endColor
+         * @type string
+         * @default 'rgba(255,255,255,0.1)'
+         */
+        /**
+         * The background color of the wrapper.
+         *
+         * @attribute wrapperColor
+         * @type string
+         * @default '#3FCADA'
+         */
+        /**
+         * Show the loading spinner.
+         *
+         * @method show
          */
         show: function(){
             this.$.spinner.style.display = "block";
         },
         /**
-         * 隐藏
-         * @return {[type]} [description]
+         * Hide the loading spinner.
+         *
+         * @method show
          */
         hide: function(){
             this.$.spinner.style.display = "none";
