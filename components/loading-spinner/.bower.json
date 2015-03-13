@@ -1,0 +1,30 @@
+{
+  "name": "loading-spinner",
+  "main": "loading-spinner.js",
+  "homepage": "https://github.com/Kreja/loading-spinner",
+  "authors": [
+    "kreja"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5",
+    "platform": "Polymer/platform#~0.4.2"
+  },
+  "_release": "e5ba082610",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e5ba082610018fc699cd28b8a982a776fd00f93c"
+  },
+  "_source": "git://github.com/Kreja/loading-spinner.git",
+  "_target": "master",
+  "_originalSource": "Kreja/loading-spinner",
+  "_direct": true
+}

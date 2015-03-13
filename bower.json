@@ -1,0 +1,7 @@
+{
+  "name": "loading-spinner#gh-pages",
+  "private": true,
+  "dependencies": {
+    "loading-spinner": "Kreja/loading-spinner#master"
+  }
+}
